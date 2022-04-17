@@ -37,8 +37,8 @@ RUN apk --update add build-base g++ make \
     	openexr-dev \
     	gtk-doc
 
-RUN wget https://gitee.com/23323/fj/attach_files/915071/download/vips-8.12.1.tar.gz \
-    && tar xf vips-8.12.1.tar.gz && cd vips-8.12.1 \
+RUN wget https://gitee.com/23323/fj/attach_files/1032557/download/vips-8.12.2.tar.gz \
+    && tar xf vips-8.12.2.tar.gz && cd vips-8.12.2 \
     && ./configure \
     && make V=0 && make install
 
