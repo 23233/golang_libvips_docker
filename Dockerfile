@@ -1,4 +1,4 @@
-FROM golang:1.17-alpine as build
+FROM golang:1.18.1-alpine as build
 
 # 容器环境变量添加，会覆盖默认的变量值
 ENV GO111MODULE=on
@@ -41,3 +41,7 @@ RUN wget https://gitee.com/23323/fj/attach_files/915071/download/vips-8.12.1.tar
     && tar xf vips-8.12.1.tar.gz && cd vips-8.12.1 \
     && ./configure \
     && make V=0 && make install
+
+# 禁止操作缓存 节约内存
+RUN bimg.VipsCacheSetMax(0) && bimg.VipsCacheSetMaxMem(0)
+
