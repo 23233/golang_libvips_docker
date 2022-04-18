@@ -1,7 +1,5 @@
 FROM debian:bullseye-slim
 
-RUN sed -i "s@http://\(deb\|security\).debian.org@https://mirrors.163.com@g" /etc/apt/sources.list
-
 # Install runtime dependencies
 RUN DEBIAN_FRONTEND=noninteractive \
   apt-get update && \
@@ -18,3 +16,4 @@ RUN DEBIAN_FRONTEND=noninteractive \
 ENV LD_PRELOAD=/usr/local/lib/libjemalloc.so
 
 
+CMD [ "bash" ]
