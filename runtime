@@ -1,5 +1,8 @@
 FROM debian:bullseye-slim
 
+# 因为没有ca 所以只能设置http
+RUN sed -i "s@http://\(deb\|security\).debian.org@http://mirrors.163.com@g" /etc/apt/sources.list
+
 # Install runtime dependencies
 RUN DEBIAN_FRONTEND=noninteractive \
   apt-get update && \
