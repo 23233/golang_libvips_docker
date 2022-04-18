@@ -2,7 +2,9 @@
 
 * docker login
 * docker build -t 23233/golang_libvips_builder:latest -f golang_libvips .
+* docker build -t 23233/golang_libvips_runtime:latest -f runtime .
 * docker push 23233/golang_libvips_builder:latest
+* docker push 23233/golang_libvips_runtime:latest
 
 ## golang and libvips结合
 
